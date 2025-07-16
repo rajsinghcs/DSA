@@ -1,18 +1,18 @@
 class Solution {
     public int[] minOperations(String boxes) {
-       char [] ch = boxes.toCharArray();
-       int [] ans = new int[ch.length];
+       
+       int [] ans = new int[boxes.length()];
 
-        for(int i=0; i<ch.length; i++){
-            int sum = 0;
-            for(int j=0; j<ch.length; j++){
-               char c = ch[j];
-               if(c == '1'){
-                sum += Math.abs(i-j);
-               }
-            }
-            ans[i] = sum;
+        for(int i=0; i<boxes.length(); i++){
+            if(boxes.charAt(i) == '1'){
+                for(int j=0; j<boxes.length(); j++){
+                    ans[j] = ans[j]+ Math.abs(i-j);
+                }
+            }else{
+                continue;
+            } 
         }
         return ans;
+            
     }
 }
