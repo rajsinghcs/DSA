@@ -18,9 +18,6 @@ class Solution {
                 }
             }
         }
-        if((c+v) == 0){
-            return 1;
-        }
         return c+v;
     }
 }
